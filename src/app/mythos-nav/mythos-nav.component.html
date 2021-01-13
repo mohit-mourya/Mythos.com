@@ -1,0 +1,98 @@
+<h1>vs se change kiya</h1>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+<mat-sidenav-container class="sidenav-container"  style="background-color: lightslategray;">
+
+  <mat-sidenav  position="end" #drawer class="sidenav"
+      fixedInViewport
+      [attr.role]="(deviceXs) ? 'dialog' : 'navigation'"
+      [mode]="(deviceXs) ? 'over' : 'over'"
+  >
+
+      <!-- side tool bar content -->
+    <mat-toolbar style="font-family: 'Tangerine', cursive; font-size:1cm; justify-content: space-evenly; color: whitesmoke; background-color:darkcyan;">
+
+        Mythos Account
+    </mat-toolbar>
+    <mat-nav-list fxLayout="column"  fxLayoutAlign = "center center">
+      <img
+        width="80px"
+        url="mohit-mourya.github.io ye hua kya"
+      >
+      <app-login-signup style="width: 80%"></app-login-signup>
+      <!-- <a mat-list-item href="#">Signup</a>
+      <a mat-list-item href="#">LogIn</a>
+      <a mat-list-item href="#">Forgot Password</a> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content style="background-color: white;">
+    <!-- side toolbar end -->
+
+
+      <!-- Main tool bar content -->
+
+      <mat-toolbar class="main-toolbar" fxLayoutAlign="space-between center">
+
+      <img
+        style="outline: none;"
+        width="50px"
+        src="../../assets/logo.png"
+        [routerLink]="['/slider']"
+      >
+    <div *ngIf = "!deviceXs">
+        <button mat-flat-button button-it [routerLink]="['/beer']">Beer</button>
+        <button mat-flat-button [routerLink]="['/wine']">Wine</button>
+        <button mat-flat-button [routerLink]="['/liqour']">Liquor</button>
+        <button mat-flat-button>Gift</button>
+        <button mat-flat-button>Extra..</button>
+    </div>
+    <div fxLayoutAlign = "space-between center">
+        <input mat-Input type="search" style=" border-radius: 15px; border :none;  outline: none; padding-left: 25px;" placeholder="search...">
+        <mat-icon>search</mat-icon>
+    </div>
+
+
+      <!-- Button code -->
+    <div>
+        <button mat-flat-button mat-icon
+          aria-label="Toggle sidenav"
+          mat-icon-button>
+              <mat-icon>shopping_cart</mat-icon>
+         </button>
+
+       <button
+        type="button" *ngIf="deviceXs"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="!deviceXs">
+        <mat-icon aria-label="Side nav toggle icon">
+            <mat-icon>person_outline</mat-icon></mat-icon>
+       </button>
+    </div>
+  </mat-toolbar>
+
+
+  <!-- main tool bar end -->
+
+
+
+    <!-- Main Page Starts from Here -->
+
+
+    <!-- Main Div cards -->
+    <br>
+        <!--Main code yha pr likh bc-->
+        <router-outlet></router-outlet>
+
+        <app-footer> </app-footer>
+        <!-- Iske age main cotent nh chlega loude  -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

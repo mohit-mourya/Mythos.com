@@ -1,0 +1,133 @@
+<!-- expantion panel -->
+
+<!-- <div class="example-action-buttons">
+    <button mat-button (click)="accordion.openAll()">Expand All</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+  </div> -->
+<mat-accordion class="example-headers-align" multi *ngIf="!exist">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title style="color :darkcyan">
+        <strong>Sign Up</strong>
+      </mat-panel-title>
+      <mat-icon style="padding-right: 20%;">account_circle</mat-icon>
+
+    </mat-expansion-panel-header>
+
+    <form class="example-form" [formGroup]="signup_group" (ngSubmit)="create(signup_group)">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>only for legends</mat-label>
+        <input matInput disabled value="Mythos">
+      </mat-form-field>
+      <br>
+      <!-- first name -->
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>First name</mat-label>
+        <input matInput [formControl]="fnamecontrol" required>
+      </mat-form-field>
+
+      <!-- last name -->
+      <br>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput [formControl]="lastcontrol" required>
+      </mat-form-field>
+      <br>
+      <!-- telephone number -->
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Telephone</mat-label>
+        <!-- <span matPrefix>+91 &nbsp;</span> -->
+        <input matInput [formControl]="phonecontrol" placeholder="555-555-1234" required>
+        <mat-icon matSuffix>telephone</mat-icon>
+      </mat-form-field>
+      <br>
+
+      <!-- gender -->
+      <mat-radio-group [formControl]="floatLabelControl">
+        <mat-label>Gender</mat-label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-radio-button value="male">Male&nbsp;&nbsp;&nbsp;&nbsp;</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+      </mat-radio-group>
+      <br>
+      <br>
+      <!-- email -->
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br>
+
+      <!-- password -->
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [formControl]="passwordFormControl" [type]="hide ? 'password' : 'text'" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide" style="background-color: transparent;border: none;">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <br>
+
+      <!-- address -->
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput [formControl]="addresscontrol" required>
+      </mat-form-field>
+
+      <!-- buttons -->
+      <div style="display: flex; justify-content: space-around">
+        <button mat-stroked-button color="primary" type="submit">signup</button>
+        <!-- <button mat-stroked-button color="primary">Login</button> -->
+      </div>
+    </form>
+  </mat-expansion-panel>
+
+
+  <!-- login pannel -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title style="color: darkcyan;">
+        <strong>login</strong>
+      </mat-panel-title>
+      <mat-icon style="padding-right:20% ;">account_circle</mat-icon>
+
+    </mat-expansion-panel-header>
+
+    <form class="example-form" [formGroup]="signup_group" (ngSubmit)="login(signup_group)">
+      <!-- email -->
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br>
+
+      <!-- password -->
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [formControl]="passwordFormControl" [type]="hide ? 'password' : 'text'" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide" style="background-color: transparent;border: none;">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <!-- buttons -->
+      <div style="display: flex; justify-content: space-around">
+        <!-- <button mat-stroked-button color="primary" type="submit">signup</button> -->
+        <button mat-stroked-button color="primary" type="submit">Login</button>
+      </div>
+    </form>
+  </mat-expansion-panel>
+</mat-accordion>
+<app-slide-bar-data *ngIf="exist"></app-slide-bar-data>

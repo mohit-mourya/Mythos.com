@@ -1,0 +1,45 @@
+.example-form {
+  /* min-width: 50px; */
+  /* max-width: 250px; */
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+  background-color: transparent;
+}
+
+td {
+  padding-right: 8px;
+}
+
+
+/* expantion pannel */
+
+.example-action-buttons {
+  padding-bottom: 20px;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+mat-label {
+  color:darkblue;
+}
+
+.mat-expansion-panel {
+  background-color: azure;
+  color: darkblue;
+  opacity: 50%;
+}

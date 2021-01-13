@@ -1,0 +1,34 @@
+
+.example-card {
+    max-width: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  mat-flat-button{
+    width: 100%;
+  }
+  .slider-but button:hover{
+    background-color:crimson ;
+    outline: none;
+    
+  }
+  .slider-but button{
+    outline: none;
+  }
+
+  
+
+  .slider-but{
+    height:450px;
+    padding: 5%;
+
+  }
+  .img{
+     width: 90%;
+     margin-top: 2%;
+     margin-bottom: 2%;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+
+  

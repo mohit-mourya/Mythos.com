@@ -1,0 +1,30 @@
+.mat-typography::-webkit-scrollbar {
+    display: none;
+    
+}
+
+
+.carousel-control-next, .carousel-control-prev{
+    width : fit-content;
+    border-radius: 100%;
+    margin-right: 2%;
+    margin-left: 2%;
+   }
+
+  
+.carousel-control-next-icon{
+    width: 1cm;
+    height: 1cm;
+  background-image: url(D:\Mythos1\src\assets\nextarrow1.png);
+}
+.carousel-control-prev-icon{
+    width: 1cm;
+    height: 1cm;
+    background-image: url(D:\Mythos1\src\assets\nextarrow.png);
+}
+
+  
+  .carousel-indicators {
+      display: none;
+  }
+  
