@@ -41,5 +41,5 @@ mat-label {
 .mat-expansion-panel {
   background-color: azure;
   color: darkblue;
-  opacity: 50%;
+  /* opacity: 50%; */
 }
